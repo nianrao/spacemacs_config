@@ -44,6 +44,7 @@ values."
      better-defaults
      emacs-lisp
      markdown
+     version-control
      ;; ivy
      (markdown :variables markdown-live-preview-engine 'vmd)
      ;; org
@@ -385,6 +386,15 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-git-commit-mode t)
+
+  '(version-control :variables
+                    version-control-diff-tool 'diff-hl)
+  '(version-control :variables
+                    version-control-diff-side 'left)
+  '(version-control :variables
+                    version-control-global-margin t)
+  (global-diff-hl-mode)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
   ;; vivado more for xdc file
   (load-file "~/.emacs.d/private/local/vivado-mode.el")
