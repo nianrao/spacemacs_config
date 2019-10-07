@@ -409,6 +409,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-git-commit-mode t)
 
+  (global-company-mode t)
+
   '(version-control :variables
                     version-control-diff-tool 'diff-hl)
   '(version-control :variables
